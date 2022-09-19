@@ -3,15 +3,19 @@ import java.util.Scanner;
 class lektier {
 
     public static void main(String[] args) {
-        System.out.println("Pick a number between 1 and 10");
-        Scanner scanner = new Scanner(System.in);
+        Scanner input = new Scanner(System.in);
+        boolean isOnRepeat = true;
+        while(isOnRepeat) {
+            System.out.println("Playing current song");
+            System.out.println("Would you like to take this song off of repeat? If so, answer yes");
+            String userInput = input.next();
 
-        int inputtedNum = scanner.nextInt();
+            if(userInput.equals("Yes")) {
+                isOnRepeat = false;
+            }
 
-        if (inputtedNum <= 5) {
-            System.out.println("Wow random text");
-        } else {
-            System.out.println("Wow anden random text");
         }
+        System.out.println("playing next song");
+
     }
 }
