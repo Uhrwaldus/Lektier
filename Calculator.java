@@ -2,20 +2,22 @@ import java.util.Scanner;
 
 class lektier {
 
+    public static void calculateTotalMealPrice(double listedMealPrice,
+                                               double tipRate,
+                                               double taxRate) {
+        double tip = tipRate * listedMealPrice;
+        double tax = taxRate * listedMealPrice;
+        double result = listedMealPrice + tip + tax;
+        System.out.println("Your total meal price is " + result);
+
+
+
+    }
+
     public static void main(String[] args) {
-        Scanner input = new Scanner(System.in);
-        boolean isOnRepeat = true;
-        while(isOnRepeat) {
-            System.out.println("Playing current song");
-            System.out.println("Would you like to take this song off of repeat? If so, answer yes");
-            String userInput = input.next();
+        calculateTotalMealPrice(15, .2, .08);
+        calculateTotalMealPrice(25, .18, .08);
 
-            if(userInput.equals("Yes")) {
-                isOnRepeat = false;
-            }
-
-        }
-        System.out.println("playing next song");
 
     }
 }
